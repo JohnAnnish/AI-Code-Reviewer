@@ -1,4 +1,9 @@
 import streamlit as st
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.analyzer import basic_analysis
 from src.complexity import check_complexity
 from src.suggestions import improve_code
@@ -26,3 +31,4 @@ if st.button("Analyze Code"):
 
     for c in complexity:
         st.write(f"Function: {c['name']} | Complexity: {c['complexity']}")
+
